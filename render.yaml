@@ -1,5 +1,5 @@
 services:
-  # Backend API (Spring Boot Java)
+  # Backend API (Spring Boot Java via Docker)
   - type: web
     name: edunexus-backend
     runtime: docker
@@ -15,16 +15,3 @@ services:
         sync: false
       - key: PORT
         value: 8080
-
-  # Frontend (React + Vite Static Site)
-  - type: web
-    name: edunexus-frontend
-    runtime: static
-    rootDir: frontend
-    buildCommand: npm install && npm run build
-    staticPublishPath: dist
-    pullRequestPreviewsEnabled: false
-    routes:
-      - type: rewrite
-        source: /*
-        destination: /index.html
