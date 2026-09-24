@@ -60,6 +60,7 @@ public class SecurityConfig {
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
                 // Public endpoints
+                .requestMatchers("/", "/health", "/api/health").permitAll()
                 .requestMatchers("/api/auth/register", "/api/auth/login", "/api/auth/forgot-password", "/api/auth/reset-password").permitAll()
                 .requestMatchers(HttpMethod.GET, "/api/courses", "/api/courses/**", "/api/courses/search", "/api/courses/category/*").permitAll()
                 .requestMatchers(HttpMethod.GET, "/api/reviews/course/**").permitAll()
