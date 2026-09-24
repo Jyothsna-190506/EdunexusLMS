@@ -1,0 +1,24 @@
+# Environment files
+.env
+*.env
+.env.local
+.env.*.local
+
+# Backend build & logs
+backend/target/
+target/
+*.log
+!.mvn/wrapper/maven-wrapper.jar
+
+# Frontend build & dependencies
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/*.log
+
+# IDE & OS
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
