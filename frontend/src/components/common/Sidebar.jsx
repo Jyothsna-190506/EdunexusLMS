@@ -13,7 +13,11 @@ import {
   BarChart3,
   User,
   Settings,
-  HelpCircle
+  HelpCircle,
+  Bell,
+  FolderTree,
+  MessageSquare,
+  Sliders
 } from 'lucide-react';
 
 const Sidebar = () => {
@@ -23,7 +27,10 @@ const Sidebar = () => {
     { to: '/student/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
     { to: '/my-learning', icon: BookOpen, label: 'My Learning' },
     { to: '/courses', icon: Compass, label: 'Explore Courses' },
+    { to: '/certificates', icon: Award, label: 'Certificates' },
+    { to: '/notifications', icon: Bell, label: 'Notifications' },
     { to: '/profile', icon: User, label: 'My Profile' },
+    { to: '/settings', icon: Settings, label: 'Settings' },
   ];
 
   const instructorLinks = [
@@ -31,14 +38,20 @@ const Sidebar = () => {
     { to: '/instructor/courses', icon: FolderKanban, label: 'Manage Courses' },
     { to: '/instructor/courses/create', icon: PlusCircle, label: 'Create Course' },
     { to: '/courses', icon: Compass, label: 'Browse Catalog' },
+    { to: '/notifications', icon: Bell, label: 'Notifications' },
     { to: '/profile', icon: User, label: 'Profile' },
+    { to: '/settings', icon: Settings, label: 'Settings' },
   ];
 
   const adminLinks = [
     { to: '/admin/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
     { to: '/admin/users', icon: Users, label: 'User Management' },
     { to: '/admin/courses', icon: Layers, label: 'Course Moderation' },
-    { to: '/admin/reports', icon: BarChart3, label: 'Analytics & Reports' },
+    { to: '/admin/categories', icon: FolderTree, label: 'Categories' },
+    { to: '/admin/reviews', icon: MessageSquare, label: 'Reviews' },
+    { to: '/admin/certificates', icon: Award, label: 'Certificates' },
+    { to: '/admin/reports', icon: BarChart3, label: 'Reports & Analytics' },
+    { to: '/admin/settings', icon: Sliders, label: 'System Settings' },
     { to: '/profile', icon: User, label: 'Admin Profile' },
   ];
 
@@ -54,16 +67,16 @@ const Sidebar = () => {
       padding: '1.5rem 1rem',
       display: 'flex',
       flexDirection: 'column',
-      gap: '0.5rem',
+      gap: '0.4rem',
       minHeight: 'calc(100vh - 72px)',
       flexShrink: 0,
     }}>
       {/* User profile mini badge */}
       <div style={{
-        padding: '1rem',
+        padding: '0.85rem 1rem',
         borderRadius: 'var(--radius-md)',
         backgroundColor: 'var(--bg-subtle)',
-        marginBottom: '1rem',
+        marginBottom: '0.75rem',
         display: 'flex',
         alignItems: 'center',
         gap: '0.75rem',
@@ -83,37 +96,39 @@ const Sidebar = () => {
         </div>
       </div>
 
-      <div style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', color: 'var(--text-subtle)', padding: '0 0.75rem', marginBottom: '0.5rem', letterSpacing: '0.05em' }}>
-        Menu
+      <div style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', color: 'var(--text-subtle)', padding: '0 0.75rem', marginBottom: '0.25rem', letterSpacing: '0.05em' }}>
+        Navigation
       </div>
 
       {/* Nav items */}
-      {links.map((link) => {
-        const Icon = link.icon;
-        return (
-          <NavLink
-            key={link.to}
-            to={link.to}
-            style={({ isActive }) => ({
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.75rem',
-              padding: '0.75rem 1rem',
-              borderRadius: 'var(--radius-md)',
-              fontSize: '0.925rem',
-              fontWeight: isActive ? 600 : 500,
-              color: isActive ? '#FFFFFF' : 'var(--text-muted)',
-              backgroundColor: isActive ? 'var(--primary)' : 'transparent',
-              transition: 'var(--transition)',
-              textDecoration: 'none',
-              boxShadow: isActive ? '0 4px 12px rgba(79, 70, 229, 0.3)' : 'none',
-            })}
-          >
-            <Icon size={18} />
-            <span>{link.label}</span>
-          </NavLink>
-        );
-      })}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
+        {links.map((link) => {
+          const Icon = link.icon;
+          return (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              style={({ isActive }) => ({
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.75rem',
+                padding: '0.65rem 0.85rem',
+                borderRadius: 'var(--radius-md)',
+                fontSize: '0.9rem',
+                fontWeight: isActive ? 600 : 500,
+                color: isActive ? '#FFFFFF' : 'var(--text-muted)',
+                backgroundColor: isActive ? 'var(--primary)' : 'transparent',
+                transition: 'var(--transition)',
+                textDecoration: 'none',
+                boxShadow: isActive ? '0 4px 12px rgba(79, 70, 229, 0.3)' : 'none',
+              })}
+            >
+              <Icon size={17} />
+              <span>{link.label}</span>
+            </NavLink>
+          );
+        })}
+      </div>
 
       {/* Support box at bottom */}
       <div style={{

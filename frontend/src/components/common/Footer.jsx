@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { GraduationCap, Mail, Phone, MapPin, Github, Twitter, Linkedin, Youtube, Heart } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Twitter, Linkedin, Youtube, Heart } from 'lucide-react';
+import EduNexusLogo from './EduNexusLogo';
 
 const Footer = () => {
   return (
@@ -20,30 +21,9 @@ const Footer = () => {
         }}>
           {/* Col 1: Brand Info */}
           <div>
-            <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', textDecoration: 'none', marginBottom: '1.25rem' }}>
-              <div style={{
-                width: '38px',
-                height: '38px',
-                borderRadius: '10px',
-                background: 'linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: '#fff'
-              }}>
-                <GraduationCap size={22} />
-              </div>
-              <span style={{
-                fontFamily: 'Outfit, sans-serif',
-                fontWeight: 800,
-                fontSize: '1.3rem',
-                background: 'linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent'
-              }}>
-                EduNexus
-              </span>
-            </Link>
+            <div style={{ marginBottom: '1.25rem' }}>
+              <EduNexusLogo size={38} subtitle="LMS" withLink={true} />
+            </div>
             <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: '1.6', marginBottom: '1.5rem' }}>
               EduNexus is the world-class learning platform designed to empower aspiring developers, engineers, and tech leaders with hands-on, industry-ready skills.
             </p>

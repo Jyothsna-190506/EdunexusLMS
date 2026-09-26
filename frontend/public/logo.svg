@@ -1,0 +1,95 @@
+<svg width="120" height="120" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad-primary" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F46E5" />
+      <stop offset="50%" stop-color="#7C3AED" />
+      <stop offset="100%" stop-color="#06B6D4" />
+    </linearGradient>
+    <linearGradient id="grad-accent" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7C3AED" />
+      <stop offset="60%" stop-color="#06B6D4" />
+      <stop offset="100%" stop-color="#38BDF8" />
+    </linearGradient>
+    <linearGradient id="grad-cap" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1" />
+      <stop offset="60%" stop-color="#4338CA" />
+      <stop offset="100%" stop-color="#312E81" />
+    </linearGradient>
+    <radialGradient id="rad-core" cx="50%" cy="58%" r="40%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#818CF8" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#4F46E5" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Ambient Core Glow -->
+  <circle cx="50" cy="58" r="24" fill="url(#rad-core)" />
+
+  <!-- Outer Shield / Nexus Prism Diamond -->
+  <path
+    d="M50 24 L82 48 L50 90 L18 48 Z"
+    fill="rgba(15, 23, 42, 0.25)"
+    stroke="url(#grad-primary)"
+    stroke-width="3.2"
+    stroke-linejoin="round"
+  />
+
+  <!-- Interlocking Nexus Left Ribbon -->
+  <path
+    d="M32 46 C32 46 44 42 48 54 C52 66 38 72 42 82 L50 90 L34 72 C28 62 32 50 32 46 Z"
+    fill="url(#grad-primary)"
+    opacity="0.95"
+  />
+
+  <!-- Interlocking Nexus Right Ribbon (Cyan Flow) -->
+  <path
+    d="M68 46 C68 46 56 42 52 54 C48 66 62 72 58 82 L50 90 L66 72 C72 62 68 50 68 46 Z"
+    fill="url(#grad-accent)"
+    opacity="0.95"
+  />
+
+  <!-- Central Quantum Nexus Spark -->
+  <polygon
+    points="50,49 53,56 60,59 53,62 50,69 47,62 40,59 47,56"
+    fill="#FFFFFF"
+  />
+
+  <!-- Academic Cap / Mortarboard Top (Edu) -->
+  <polygon
+    points="50,10 88,27 50,44 12,27"
+    fill="url(#grad-cap)"
+    stroke="#818CF8"
+    stroke-width="1.8"
+    stroke-linejoin="round"
+  />
+
+  <!-- Cap Crown Ridge Light -->
+  <path
+    d="M14 27 L50 43 L86 27"
+    stroke="rgba(255, 255, 255, 0.4)"
+    stroke-width="1.5"
+    fill="none"
+  />
+
+  <!-- Cap Underneath Base -->
+  <path
+    d="M32 38 C32 38 40 44 50 44 C60 44 68 38 68 38 L68 43 C68 49 60 54 50 54 C40 54 32 49 32 43 Z"
+    fill="#312E81"
+    stroke="url(#grad-primary)"
+    stroke-width="1.2"
+  />
+
+  <!-- Tassel String & Bell -->
+  <path
+    d="M50 27 Q78 26 80 44"
+    fill="none"
+    stroke="#F59E0B"
+    stroke-width="1.6"
+    stroke-linecap="round"
+  />
+  <circle cx="80" cy="46" r="2.4" fill="#FBBF24" />
+  <path
+    d="M78 48 L82 48 L83 55 L77 55 Z"
+    fill="#F59E0B"
+  />
+</svg>

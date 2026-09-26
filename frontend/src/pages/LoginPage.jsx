@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useNotification } from '../context/NotificationContext';
-import { GraduationCap, Mail, Lock, Eye, EyeOff, LogIn, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Mail, Lock, Eye, EyeOff, LogIn, Sparkles, CheckCircle2 } from 'lucide-react';
+import { EduNexusMark } from '../components/common/EduNexusLogo';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -59,19 +60,8 @@ const LoginPage = () => {
         {/* Card */}
         <div className="card" style={{ padding: '2.5rem', boxShadow: 'var(--shadow-xl)' }}>
           <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-            <div style={{
-              width: '48px',
-              height: '48px',
-              borderRadius: '14px',
-              background: 'linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%)',
-              display: 'inline-flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: '#fff',
-              marginBottom: '1rem',
-              boxShadow: 'var(--shadow-glow)'
-            }}>
-              <GraduationCap size={28} />
+            <div style={{ marginBottom: '1rem', display: 'flex', justifyContent: 'center' }}>
+              <EduNexusMark size={56} />
             </div>
             <h2 style={{ fontSize: '1.75rem', fontWeight: 800 }}>Welcome Back</h2>
             <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>
